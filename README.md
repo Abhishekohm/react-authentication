@@ -4,7 +4,7 @@
 
 - ### Login
 - ### Logout
-- ### Persistance Login
+- ### Persistent Login
 - ### Authorization using JWT
 - ### Dynamic creation of access token
 - ### API requests to backend using axios and preloaded access token
