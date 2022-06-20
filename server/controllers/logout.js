@@ -1,0 +1,30 @@
+const User = require("../models/Users");
+
+exports.logout = async (req, res) => {
+    const cookies = req.cookies;
+    // if jwt cookie is not there
+    if (!cookies.jwt) {
+        return res.sendStatus(204);
+    }
+    const refreshToken = cookies.jwt; // extracting refreshToken from cookies
+    const foundUser = await User.findOne({ refreshToken }); // searching user on the basis of refreshToken
+    if (!foundUser) {
+        res.clearCookie('jwt', {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000,
+            sameSite: "None",
+            secure: true
+        })
+        return res.sendStatus(204);
+    }
+    foundUser.refreshToken = '';
+    await foundUser.save();
+
+    res.clearCookie('jwt', {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000,
+        sameSite: "None",
+        secure: true
+    })
+    res.sendStatus(204);
+}

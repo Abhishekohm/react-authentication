@@ -1,0 +1,11 @@
+.backgound-image-login {
+  background-image: url("../assets/background-image.jpg");
+  background-size: cover;
+}
+.login-form {
+  background-color: #404c7ea8;
+  padding: 10px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #404c7eb4;
+  box-shadow: 0 0 10px #404c7eb4;
+}
