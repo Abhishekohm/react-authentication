@@ -1,6 +1,6 @@
-#REACT-AUTHENTICATION
+# REACT-AUTHENTICATION
 
-##Features
+## Features
 
 - ### Login
 - ### Logout
